@@ -86,11 +86,11 @@ export default function QRCodePage() {
 
       <main className="max-w-3xl mx-auto px-6 py-10 space-y-6">
         <div className="space-y-2">
-          <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+          <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
             {t.qrCode.inputLabel}
           </label>
           <textarea
-            className="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-3 text-base focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none placeholder:text-zinc-400"
+            className="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none placeholder:text-zinc-400"
             rows={4}
             placeholder={t.qrCode.placeholder}
             value={text}
@@ -100,7 +100,7 @@ export default function QRCodePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="space-y-2">
-            <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.qrCode.size}: {size}px
             </label>
             <input
@@ -114,7 +114,7 @@ export default function QRCodePage() {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.qrCode.bgColor}
             </label>
             <div className="flex items-center gap-2">
@@ -124,11 +124,11 @@ export default function QRCodePage() {
                 onChange={(e) => setBgColor(e.target.value)}
                 className="w-10 h-10 rounded border border-zinc-300 dark:border-zinc-700 cursor-pointer"
               />
-              <span className="text-base text-zinc-500 font-mono">{bgColor}</span>
+              <span className="text-sm text-zinc-500 font-mono">{bgColor}</span>
             </div>
           </div>
           <div className="space-y-2">
-            <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.qrCode.fgColor}
             </label>
             <div className="flex items-center gap-2">
@@ -138,7 +138,7 @@ export default function QRCodePage() {
                 onChange={(e) => setFgColor(e.target.value)}
                 className="w-10 h-10 rounded border border-zinc-300 dark:border-zinc-700 cursor-pointer"
               />
-              <span className="text-base text-zinc-500 font-mono">{fgColor}</span>
+              <span className="text-sm text-zinc-500 font-mono">{fgColor}</span>
             </div>
           </div>
         </div>
@@ -152,13 +152,13 @@ export default function QRCodePage() {
               bgColor={bgColor}
               fgColor={fgColor}
             />
-            <p className="text-base text-zinc-400 break-all max-w-xs text-center">
+            <p className="text-sm text-zinc-400 break-all max-w-xs text-center">
               {text}
             </p>
 
             {/* Format selector */}
             <div className="w-full space-y-2">
-              <p className="text-base font-medium text-zinc-700 dark:text-zinc-300 text-center">
+              <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300 text-center">
                 {t.qrCode.formatLabel}
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -166,7 +166,7 @@ export default function QRCodePage() {
                   <button
                     key={opt.value}
                     onClick={() => setFormat(opt.value)}
-                    className={`rounded-lg border px-3 py-2.5 text-base font-bold tracking-wide transition-colors ${
+                    className={`rounded-lg border px-3 py-2.5 text-sm font-bold tracking-wide transition-colors ${
                       format === opt.value
                         ? "border-purple-500 bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300"
                         : "border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-zinc-500"
@@ -180,16 +180,16 @@ export default function QRCodePage() {
 
             <button
               onClick={download}
-              className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-purple-600 text-white text-base font-medium hover:bg-purple-700 transition-colors"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors"
             >
               {t.qrCode.download} {format.toUpperCase()}
               {format !== "svg" && (
-                <span className="ml-1.5 opacity-70 text-base">({EXPORT_SIZE}×{EXPORT_SIZE}px)</span>
+                <span className="ml-1.5 opacity-70 text-sm">({EXPORT_SIZE}×{EXPORT_SIZE}px)</span>
               )}
             </button>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-48 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 text-zinc-400 dark:text-zinc-600 text-base">
+          <div className="flex items-center justify-center h-48 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 text-zinc-400 dark:text-zinc-600 text-sm">
             {t.qrCode.empty}
           </div>
         )}

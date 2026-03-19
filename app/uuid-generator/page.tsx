@@ -46,13 +46,13 @@ export default function UUIDGeneratorPage() {
       <main className="max-w-3xl mx-auto px-6 py-10 space-y-6">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.uuidGenerator.count}
             </label>
             <select
               value={count}
               onChange={(e) => setCount(Number(e.target.value))}
-              className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-3 py-1.5 text-base focus:outline-none"
+              className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-3 py-1.5 text-sm focus:outline-none"
             >
               {[1, 5, 10, 20, 50].map((n) => (
                 <option key={n} value={n}>
@@ -63,14 +63,14 @@ export default function UUIDGeneratorPage() {
           </div>
           <button
             onClick={generate}
-            className="px-5 py-2 rounded-lg bg-pink-600 text-white text-base font-medium hover:bg-pink-700 transition-colors"
+            className="px-5 py-2 rounded-lg bg-pink-600 text-white text-sm font-medium hover:bg-pink-700 transition-colors"
           >
             {t.uuidGenerator.generate}
           </button>
           {uuids.length > 1 && (
             <button
               onClick={copyAll}
-              className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-base font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors ml-auto"
+              className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors ml-auto"
             >
               {copied === "all" ? t.uuidGenerator.copiedAll : t.uuidGenerator.copyAll}
             </button>
@@ -84,12 +84,12 @@ export default function UUIDGeneratorPage() {
                 key={uuid}
                 className="flex items-center justify-between gap-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3"
               >
-                <span className="font-mono text-base text-zinc-800 dark:text-zinc-200 tabular-nums">
+                <span className="font-mono text-sm text-zinc-800 dark:text-zinc-200 tabular-nums">
                   {uuid}
                 </span>
                 <button
                   onClick={() => copy(uuid)}
-                  className="shrink-0 text-base px-3 py-1.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                  className="shrink-0 text-sm px-3 py-1.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
                 >
                   {copied === uuid ? t.uuidGenerator.copied : t.uuidGenerator.copy}
                 </button>
@@ -99,7 +99,7 @@ export default function UUIDGeneratorPage() {
         )}
 
         {uuids.length === 0 && (
-          <div className="flex items-center justify-center h-40 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 text-zinc-400 dark:text-zinc-600 text-base">
+          <div className="flex items-center justify-center h-40 rounded-xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 text-zinc-400 dark:text-zinc-600 text-sm">
             {t.uuidGenerator.empty}
           </div>
         )}

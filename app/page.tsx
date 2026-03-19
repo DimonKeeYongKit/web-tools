@@ -37,7 +37,7 @@ export default function Home() {
                 <h2 className="font-semibold text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {info.title}
                 </h2>
-                <p className="text-base text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">
                   {info.description}
                 </p>
               </Link>

@@ -46,7 +46,7 @@ export default function WordCounterPage() {
               <div className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 tabular-nums">
                 {item.value.toLocaleString()}
               </div>
-              <div className="text-base text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              <div className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
                 {item.label}
               </div>
             </div>
@@ -55,20 +55,20 @@ export default function WordCounterPage() {
 
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <label className="text-base font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.wordCounter.inputLabel}
             </label>
             {text && (
               <button
                 onClick={() => setText("")}
-                className="text-base text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+                className="text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
               >
                 {t.wordCounter.clear}
               </button>
             )}
           </div>
           <textarea
-            className="w-full h-80 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-4 text-base focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none placeholder:text-zinc-400 leading-relaxed"
+            className="w-full h-80 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none placeholder:text-zinc-400 leading-relaxed"
             placeholder={t.wordCounter.placeholder}
             value={text}
             onChange={(e) => setText(e.target.value)}
