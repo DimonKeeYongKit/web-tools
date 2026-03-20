@@ -13,9 +13,9 @@ const zh = {
         title: "JSON 格式化",
         description: "美化或压缩 JSON，高亮错误提示",
       },
-      base64: {
-        title: "Base64 编解码",
-        description: "文本与 Base64 字符串互相转换",
+      cyberchef: {
+        title: "CyberChef",
+        description: "加密、编码、压缩和数据分析的网络瑞士军刀",
       },
       "password-generator": {
         title: "密码生成器",
@@ -28,6 +28,10 @@ const zh = {
       "uuid-generator": {
         title: "UUID 生成器",
         description: "批量生成 UUID v4 随机唯一标识",
+      },
+      ifixit: {
+        title: "iFixit",
+        description: "免费的维修手册，适用于任何物品",
       },
     },
   },
@@ -52,22 +56,6 @@ const zh = {
     inputLabel: "输入 JSON",
     outputLabel: "输出",
     outputPlaceholder: "格式化结果将显示在这里...",
-  },
-  base64: {
-    encodeTab: "编码 (Text → Base64)",
-    decodeTab: "解码 (Base64 → Text)",
-    inputLabelEncode: "原始文本",
-    inputLabelDecode: "Base64 字符串",
-    placeholderEncode: "输入要编码的文本...",
-    placeholderDecode: "输入 Base64 字符串...",
-    errorDecode: "无效的 Base64 字符串",
-    errorEncode: "编码失败",
-    encode: "编码",
-    decode: "解码",
-    swap: "⇄ 反向",
-    resultLabelEncode: "Base64 结果",
-    resultLabelDecode: "解码结果",
-    copy: "复制",
   },
   passwordGenerator: {
     length: "密码长度",
@@ -123,9 +111,9 @@ const en: Translations = {
         title: "JSON Formatter",
         description: "Prettify or minify JSON with error highlighting",
       },
-      base64: {
-        title: "Base64 Encoder/Decoder",
-        description: "Convert between plain text and Base64 strings",
+      cyberchef: {
+        title: "CyberChef",
+        description: "The Cyber Swiss Army Knife for encryption, encoding, compression and data analysis",
       },
       "password-generator": {
         title: "Password Generator",
@@ -138,6 +126,10 @@ const en: Translations = {
       "uuid-generator": {
         title: "UUID Generator",
         description: "Bulk generate UUID v4 unique identifiers",
+      },
+      ifixit: {
+        title: "iFixit",
+        description: "The free repair manual for everything",
       },
     },
   },
@@ -162,22 +154,6 @@ const en: Translations = {
     inputLabel: "Input JSON",
     outputLabel: "Output",
     outputPlaceholder: "Formatted result will appear here...",
-  },
-  base64: {
-    encodeTab: "Encode (Text → Base64)",
-    decodeTab: "Decode (Base64 → Text)",
-    inputLabelEncode: "Plain text",
-    inputLabelDecode: "Base64 string",
-    placeholderEncode: "Enter text to encode...",
-    placeholderDecode: "Enter Base64 string...",
-    errorDecode: "Invalid Base64 string",
-    errorEncode: "Encoding failed",
-    encode: "Encode",
-    decode: "Decode",
-    swap: "⇄ Reverse",
-    resultLabelEncode: "Base64 result",
-    resultLabelDecode: "Decoded result",
-    copy: "Copy",
   },
   passwordGenerator: {
     length: "Length",
