@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { NavBar } from "./components/navbar";
 import { useLang } from "./components/lang-context";
 import { translations } from "./i18n/translations";
@@ -14,6 +15,7 @@ const toolsMeta: { id: ToolId; icon: string; href: string; color: string; isExte
   { id: "password-generator", icon: "🔐", href: "/password-generator", color: "hover:border-green-400 dark:hover:border-green-500" },
   { id: "word-counter", icon: "📝", href: "/word-counter", color: "hover:border-orange-400 dark:hover:border-orange-500" },
   { id: "uuid-generator", icon: "🔑", href: "/uuid-generator", color: "hover:border-pink-400 dark:hover:border-pink-500" },
+  { id: "compound-interest-calculator", icon: "📈", href: "/compound-interest-calculator", color: "hover:border-red-400 dark:hover:border-red-500" },
   { id: "ifixit", icon: "https://www.google.com/s2/favicons?domain=www.ifixit.com", href: "https://www.ifixit.com/", color: "hover:border-gray-400 dark:hover:border-gray-500", isExternal: true },
 ];
 
@@ -31,7 +33,18 @@ export default function Home() {
             const linkContent = (
               <>
                 <div className="text-3xl mb-3">
-                  {meta.icon.startsWith("http") ? <img src={meta.icon} alt={`${meta.id} logo`} className="w-8 h-8" /> : meta.icon}
+                  {meta.icon.startsWith("http") ? (
+                    <Image
+                      src={meta.icon}
+                      alt={`${meta.id} logo`}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8"
+                      unoptimized
+                    />
+                  ) : (
+                    meta.icon
+                  )}
                 </div>
                 <h2 className="font-semibold text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {info.title}

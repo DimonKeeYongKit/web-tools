@@ -29,6 +29,10 @@ const zh = {
         title: "UUID 生成器",
         description: "批量生成 UUID v4 随机唯一标识",
       },
+      "compound-interest-calculator": {
+        title: "复利计算器",
+        description: "计算定期投资的复利",
+      },
       ifixit: {
         title: "iFixit",
         description: "免费的维修手册，适用于任何物品",
@@ -92,6 +96,23 @@ const zh = {
     copied: "✓",
     empty: "点击「生成 UUID」按钮开始",
   },
+  compoundInterest: {
+    title: "复利计算器",
+    initialInvestment: "初始资金",
+    monthlyInvestment: "每月投资",
+    interestRate: "年利率 (%)",
+    years: "投资年限",
+    compoundingFrequency: "复利结算频率",
+    yearly: "每年",
+    monthly: "每月",
+    daily: "每天",
+    calculate: "计算",
+    results: "结果",
+    year: "年份",
+    invested: "累计投资",
+    interestEarned: "当年利息",
+    total: "总金额",
+  },
 };
 
 type Translations = typeof zh;
@@ -126,6 +147,10 @@ const en: Translations = {
       "uuid-generator": {
         title: "UUID Generator",
         description: "Bulk generate UUID v4 unique identifiers",
+      },
+      "compound-interest-calculator": {
+        title: "Compound Interest Calculator",
+        description: "Calculate compound interest for periodic investments",
       },
       ifixit: {
         title: "iFixit",
@@ -188,7 +213,24 @@ const en: Translations = {
     copiedAll: "✓ All copied",
     copy: "Copy",
     copied: "✓",
-    empty: 'Click "Generate UUID" to start',
+    empty: "Click 'Generate UUID' to start",
+  },
+  compoundInterest: {
+    title: "Compound Interest Calculator",
+    initialInvestment: "Initial Investment",
+    monthlyInvestment: "Monthly Investment",
+    interestRate: "Annual Interest Rate (%)",
+    years: "Years of Investment",
+    compoundingFrequency: "Compounding Frequency",
+    yearly: "Yearly",
+    monthly: "Monthly",
+    daily: "Daily",
+    calculate: "Calculate",
+    results: "Results",
+    year: "Year",
+    invested: "Total Invested",
+    interestEarned: "Interest Earned (Year)",
+    total: "Total Amount",
   },
 };
 
