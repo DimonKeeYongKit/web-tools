@@ -55,7 +55,10 @@ export default function CompoundInterestCalculator() {
                     total: total,
                 };
 
-                if (total >= doublingTarget) {
+                if (
+                    total >= doublingTarget &&
+                    parseFloat(initialInvestment) > parseFloat(monthlyInvestment)
+                ) {
                     data.doubled = true;
                     doublingTarget *= 2;
                 }
@@ -87,7 +90,11 @@ export default function CompoundInterestCalculator() {
                         interest: yearlyInterest,
                         total: total,
                     };
-                    if (total >= doublingTarget) {
+                    if (
+                        total >= doublingTarget &&
+                        parseFloat(initialInvestment) >=
+                            parseFloat(monthlyInvestment)
+                    ) {
                         data.doubled = true;
                         doublingTarget *= 2;
                     }
@@ -104,7 +111,10 @@ export default function CompoundInterestCalculator() {
                     interest: yearlyInterest,
                     total: total,
                 };
-                if (total >= doublingTarget) {
+                if (
+                    total >= doublingTarget &&
+                    parseFloat(initialInvestment) >= parseFloat(monthlyInvestment)
+                ) {
                     data.doubled = true;
                     doublingTarget *= 2;
                 }
