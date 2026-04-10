@@ -17,6 +17,7 @@ const toolsMeta: { id: ToolId; icon: string; href: string; color: string; isExte
   { id: "uuid-generator", icon: "🔑", href: "/uuid-generator", color: "hover:border-pink-400 dark:hover:border-pink-500" },
   { id: "compound-interest-calculator", icon: "📈", href: "/compound-interest-calculator", color: "hover:border-red-400 dark:hover:border-red-500" },
   { id: "ifixit", icon: "https://www.google.com/s2/favicons?domain=www.ifixit.com", href: "https://www.ifixit.com/", color: "hover:border-gray-400 dark:hover:border-gray-500", isExternal: true },
+  { id: "virustotal", icon: "https://www.google.com/s2/favicons?domain=www.virustotal.com", href: "https://www.virustotal.com/", color: "hover:border-teal-400 dark:hover:border-teal-500", isExternal: true },
 ];
 
 export default function Home() {

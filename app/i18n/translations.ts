@@ -37,6 +37,10 @@ const zh = {
         title: "iFixit",
         description: "免费的维修手册，适用于任何物品",
       },
+      virustotal: {
+        title: "VirusTotal",
+        description: "分析可疑文件和URL以检测恶意软件类型",
+      },
     },
   },
   qrCode: {
@@ -155,6 +159,10 @@ const en: Translations = {
       ifixit: {
         title: "iFixit",
         description: "The free repair manual for everything",
+      },
+      virustotal: {
+        title: "VirusTotal",
+        description: "Analyze suspicious files and URLs to detect types of malware",
       },
     },
   },
