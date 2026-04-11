@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 import type { Lang } from "../i18n/translations";
 
-let _lang: Lang = "zh";
+let _lang: Lang = "en";
 let _mounted = false;
 const _listeners = new Set<() => void>();
 
@@ -32,7 +32,7 @@ export function useLang() {
   const lang = useSyncExternalStore(
     subscribe,
     () => _lang,
-    () => "zh" as Lang
+    () => "en" as Lang
   );
   return { lang, setLang };
 }
