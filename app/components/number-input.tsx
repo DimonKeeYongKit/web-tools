@@ -36,7 +36,7 @@ export function NumberInput({
       onChange={handleChange}
       onBlur={onBlur}
       disabled={disabled}
-      className="w-full p-2 border rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700"
+      className="w-full px-2.5 py-1.5 text-sm border rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700"
     />
   );
 }

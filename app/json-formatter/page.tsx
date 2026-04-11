@@ -44,16 +44,16 @@ export default function JSONFormatterPage() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       <NavBar variant="tool" title={`📋 ${t.home.tools["json-formatter"].title}`} backLabel={t.common.back} />
 
-      <main className="max-w-5xl mx-auto px-6 py-10 space-y-4">
-        <div className="flex items-center gap-4 flex-wrap">
+      <main className="max-w-4xl mx-auto px-4 md:px-5 py-6 md:py-8 space-y-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-2">
-            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.jsonFormatter.indent}
             </label>
             <select
               value={indent}
               onChange={(e) => setIndent(Number(e.target.value))}
-              className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-2.5 py-1.5 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
             >
               <option value={2}>{t.jsonFormatter.twoSpaces}</option>
               <option value={4}>{t.jsonFormatter.fourSpaces}</option>
@@ -62,20 +62,20 @@ export default function JSONFormatterPage() {
           </div>
           <button
             onClick={format}
-            className="px-4 py-2 rounded-lg bg-yellow-500 text-white text-sm font-medium hover:bg-yellow-600 transition-colors"
+            className="px-3.5 py-1.5 rounded-lg bg-yellow-500 text-white text-xs md:text-sm font-medium hover:bg-yellow-600 transition-colors"
           >
             {t.jsonFormatter.format}
           </button>
           <button
             onClick={minify}
-            className="px-4 py-2 rounded-lg bg-zinc-700 text-white text-sm font-medium hover:bg-zinc-800 transition-colors"
+            className="px-3.5 py-1.5 rounded-lg bg-zinc-700 text-white text-xs md:text-sm font-medium hover:bg-zinc-800 transition-colors"
           >
             {t.jsonFormatter.minify}
           </button>
           {output && (
             <button
               onClick={copyOutput}
-              className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors ml-auto"
+              className="px-3.5 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs md:text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors ml-auto"
             >
               {t.jsonFormatter.copyResult}
             </button>
@@ -83,18 +83,18 @@ export default function JSONFormatterPage() {
         </div>
 
         {error && (
-          <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-4 py-3 text-red-700 dark:text-red-400 text-sm font-mono">
+          <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-2 text-red-700 dark:text-red-400 text-xs md:text-sm font-mono">
             ❌ {error}
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.jsonFormatter.inputLabel}
             </label>
             <textarea
-              className="w-full h-96 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-3 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
+              className="w-full h-80 md:h-88 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-2.5 text-xs md:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
               placeholder='{"key": "value"}'
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -102,11 +102,11 @@ export default function JSONFormatterPage() {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.jsonFormatter.outputLabel}
             </label>
             <textarea
-              className="w-full h-96 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-3 text-sm font-mono focus:outline-none resize-none"
+              className="w-full h-80 md:h-88 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-2.5 text-xs md:text-sm font-mono focus:outline-none resize-none"
               value={output}
               readOnly
               placeholder={t.jsonFormatter.outputPlaceholder}

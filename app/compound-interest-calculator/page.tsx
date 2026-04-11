@@ -138,11 +138,11 @@ export default function CompoundInterestCalculator() {
                 title={`📈 ${t.home.tools["compound-interest-calculator"].title}`}
                 backLabel={t.common.back}
             />
-            <main className="max-w-5xl mx-auto px-6 py-10">
-                <h1 className="text-2xl font-bold mb-4">{t.compoundInterest.title}</h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <main className="max-w-4xl mx-auto px-4 md:px-5 py-6 md:py-8">
+                <h1 className="text-xl md:text-2xl font-bold mb-3">{t.compoundInterest.title}</h1>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                     <div>
-                        <label className="block mb-1">
+                        <label className="block mb-1 text-xs md:text-sm">
                             {t.compoundInterest.initialInvestment}
                         </label>
                         <NumberInput
@@ -151,7 +151,7 @@ export default function CompoundInterestCalculator() {
                         />
                     </div>
                     <div>
-                        <label className="block mb-1">
+                        <label className="block mb-1 text-xs md:text-sm">
                             {t.compoundInterest.monthlyInvestment}
                         </label>
                         <NumberInput
@@ -160,13 +160,13 @@ export default function CompoundInterestCalculator() {
                         />
                     </div>
                     <div>
-                        <label className="block mb-1">
+                        <label className="block mb-1 text-xs md:text-sm">
                             {t.compoundInterest.interestRate}
                         </label>
                         <NumberInput value={interestRate} onChange={setInterestRate} />
                     </div>
                     <div>
-                        <label className="block mb-1">{t.compoundInterest.years}</label>
+                        <label className="block mb-1 text-xs md:text-sm">{t.compoundInterest.years}</label>
                         <NumberInput
                             value={years}
                             onChange={(value) => {
@@ -178,7 +178,7 @@ export default function CompoundInterestCalculator() {
                         />
                     </div>
                     <div>
-                        <label className="block mb-1">
+                        <label className="block mb-1 text-xs md:text-sm">
                             {t.compoundInterest.compoundingFrequency}
                         </label>
                         <select
@@ -186,7 +186,7 @@ export default function CompoundInterestCalculator() {
                             onChange={(e) =>
                                 setCompoundingFrequency(e.target.value as CompoundingFrequency)
                             }
-                            className="w-full p-2 border rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700"
+                            className="w-full px-2.5 py-1.5 text-xs md:text-sm border rounded bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700"
                         >
                             <option value="yearly">{t.compoundInterest.yearly}</option>
                             <option value="monthly">{t.compoundInterest.monthly}</option>
@@ -197,24 +197,24 @@ export default function CompoundInterestCalculator() {
 
                 {result.length > 0 && (
                     <div className="mt-4">
-                        <h2 className="text-xl font-bold mb-2">
+                        <h2 className="text-lg md:text-xl font-bold mb-2">
                             {t.compoundInterest.results}
                         </h2>
                         <div className="hidden lg:grid lg:grid-cols-2 lg:gap-x-8">
                             <div>
-                                <table className="w-full border-collapse border">
+                                <table className="w-full border-collapse border text-xs md:text-sm">
                                     <thead>
                                         <tr className="bg-gray-200 dark:bg-zinc-800">
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.year}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.invested}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.interestEarned}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.total}
                                             </th>
                                         </tr>
@@ -233,22 +233,22 @@ export default function CompoundInterestCalculator() {
                                                                 : "bg-gray-50 dark:bg-zinc-800"
                                                     }
                                                 >
-                                                    <td className="border p-2 text-center">
+                                                    <td className="border p-1.5 text-center">
                                                         {data.year}
                                                     </td>
-                                                    <td className="border p-2 text-right">
+                                                    <td className="border p-1.5 text-right">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
                                                         }).format(data.invested)}
                                                     </td>
-                                                    <td className="border p-2 text-right">
+                                                    <td className="border p-1.5 text-right">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
                                                         }).format(data.interest)}
                                                     </td>
-                                                    <td className="border p-2 text-right font-semibold">
+                                                    <td className="border p-1.5 text-right font-semibold">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
@@ -260,19 +260,19 @@ export default function CompoundInterestCalculator() {
                                 </table>
                             </div>
                             <div>
-                                <table className="w-full border-collapse border">
+                                <table className="w-full border-collapse border text-xs md:text-sm">
                                     <thead>
                                         <tr className="bg-gray-200 dark:bg-zinc-800">
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.year}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.invested}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.interestEarned}
                                             </th>
-                                            <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                            <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                                 {t.compoundInterest.total}
                                             </th>
                                         </tr>
@@ -291,22 +291,22 @@ export default function CompoundInterestCalculator() {
                                                                 : "bg-gray-50 dark:bg-zinc-800"
                                                     }
                                                 >
-                                                    <td className="border p-2 text-center">
+                                                    <td className="border p-1.5 text-center">
                                                         {data.year}
                                                     </td>
-                                                    <td className="border p-2 text-right">
+                                                    <td className="border p-1.5 text-right">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
                                                         }).format(data.invested)}
                                                     </td>
-                                                    <td className="border p-2 text-right">
+                                                    <td className="border p-1.5 text-right">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
                                                         }).format(data.interest)}
                                                     </td>
-                                                    <td className="border p-2 text-right font-semibold">
+                                                    <td className="border p-1.5 text-right font-semibold">
                                                         {new Intl.NumberFormat(lang, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2,
@@ -319,19 +319,19 @@ export default function CompoundInterestCalculator() {
                             </div>
                         </div>
                         <div className="lg:hidden">
-                            <table className="w-full border-collapse border">
+                            <table className="w-full border-collapse border text-xs md:text-sm">
                                 <thead>
                                     <tr className="bg-gray-200 dark:bg-zinc-800">
-                                        <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                        <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                             {t.compoundInterest.year}
                                         </th>
-                                        <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                        <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                             {t.compoundInterest.invested}
                                         </th>
-                                        <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                        <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                             {t.compoundInterest.interestEarned}
                                         </th>
-                                        <th className="border p-2 font-medium text-zinc-900 dark:text-zinc-50">
+                                        <th className="border p-1.5 font-medium text-zinc-900 dark:text-zinc-50">
                                             {t.compoundInterest.total}
                                         </th>
                                     </tr>
@@ -348,20 +348,20 @@ export default function CompoundInterestCalculator() {
                                                         : "bg-gray-50 dark:bg-zinc-800"
                                             }
                                         >
-                                            <td className="border p-2 text-center">{data.year}</td>
-                                            <td className="border p-2 text-right">
+                                            <td className="border p-1.5 text-center">{data.year}</td>
+                                            <td className="border p-1.5 text-right">
                                                 {new Intl.NumberFormat(lang, {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2,
                                                 }).format(data.invested)}
                                             </td>
-                                            <td className="border p-2 text-right">
+                                            <td className="border p-1.5 text-right">
                                                 {new Intl.NumberFormat(lang, {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2,
                                                 }).format(data.interest)}
                                             </td>
-                                            <td className="border p-2 text-right font-semibold">
+                                            <td className="border p-1.5 text-right font-semibold">
                                                 {new Intl.NumberFormat(lang, {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2,

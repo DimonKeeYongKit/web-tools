@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import Link from "next/link";
 import { NavBar } from "../components/navbar";
 import { useLang } from "../components/lang-context";
 import { translations } from "../i18n/translations";
@@ -73,10 +72,10 @@ export default function PasswordGeneratorPage() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       <NavBar variant="tool" title={`🔐 ${t.home.tools["password-generator"].title}`} backLabel={t.common.back} />
 
-      <main className="max-w-3xl mx-auto px-6 py-10 space-y-6">
-        <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 space-y-5">
+      <main className="max-w-2xl mx-auto px-4 md:px-5 py-6 md:py-8 space-y-4">
+        <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 md:p-5 space-y-4">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.passwordGenerator.length}: {length}
             </label>
             <input
@@ -89,7 +88,7 @@ export default function PasswordGeneratorPage() {
             />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {(
               ["uppercase", "lowercase", "digits", "symbols"] as const
             ).map((key) => (
@@ -105,22 +104,22 @@ export default function PasswordGeneratorPage() {
                   }
                   className="rounded accent-green-500"
                 />
-                <span className="text-sm text-zinc-700 dark:text-zinc-300">
+                <span className="text-xs md:text-sm text-zinc-700 dark:text-zinc-300">
                   {t.passwordGenerator.charSets[key]}
                 </span>
               </label>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 {t.passwordGenerator.count}
               </label>
               <select
                 value={count}
                 onChange={(e) => setCount(Number(e.target.value))}
-                className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-3 py-1.5 text-sm focus:outline-none"
+                className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 px-2.5 py-1.5 text-xs md:text-sm focus:outline-none"
               >
                 {[1, 5, 10, 20].map((n) => (
                   <option key={n} value={n}>
@@ -131,7 +130,7 @@ export default function PasswordGeneratorPage() {
             </div>
             <button
               onClick={generate}
-              className="px-5 py-2 rounded-lg bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors"
+              className="px-4 py-1.5 rounded-lg bg-green-600 text-white text-xs md:text-sm font-medium hover:bg-green-700 transition-colors"
             >
               {t.passwordGenerator.generate}
             </button>
@@ -143,16 +142,16 @@ export default function PasswordGeneratorPage() {
             {passwords.map((pw, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between gap-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3"
+                className="flex items-center justify-between gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 py-2.5"
               >
                 <span
-                  className={`font-mono text-sm break-all ${strengthColor(pw)}`}
+                  className={`font-mono text-xs md:text-sm break-all ${strengthColor(pw)}`}
                 >
                   {pw}
                 </span>
                 <button
                   onClick={() => copy(i)}
-                  className="shrink-0 text-sm px-3 py-1.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                  className="shrink-0 text-xs md:text-sm px-2.5 py-1.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
                 >
                   {copied === i ? t.passwordGenerator.copied : t.passwordGenerator.copy}
                 </button>

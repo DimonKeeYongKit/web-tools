@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { NavBar } from "../components/navbar";
 import { useLang } from "../components/lang-context";
 import { translations } from "../i18n/translations";
@@ -36,17 +35,17 @@ export default function WordCounterPage() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       <NavBar variant="tool" title={`📝 ${t.home.tools["word-counter"].title}`} backLabel={t.common.back} />
 
-      <main className="max-w-4xl mx-auto px-6 py-10 space-y-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <main className="max-w-3xl mx-auto px-4 md:px-5 py-6 md:py-8 space-y-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
           {statItems.map((item) => (
             <div
               key={item.label}
-              className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 text-center"
+              className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3 text-center"
             >
-              <div className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 tabular-nums">
+              <div className="text-xl md:text-2xl font-bold text-zinc-900 dark:text-zinc-50 tabular-nums">
                 {item.value.toLocaleString()}
               </div>
-              <div className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+              <div className="text-xs md:text-sm text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug">
                 {item.label}
               </div>
             </div>
@@ -55,20 +54,20 @@ export default function WordCounterPage() {
 
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
               {t.wordCounter.inputLabel}
             </label>
             {text && (
               <button
                 onClick={() => setText("")}
-                className="text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+                className="text-xs md:text-sm text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
               >
                 {t.wordCounter.clear}
               </button>
             )}
           </div>
           <textarea
-            className="w-full h-80 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none placeholder:text-zinc-400 leading-relaxed"
+            className="w-full h-72 md:h-80 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 p-3 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none placeholder:text-zinc-400 leading-relaxed"
             placeholder={t.wordCounter.placeholder}
             value={text}
             onChange={(e) => setText(e.target.value)}

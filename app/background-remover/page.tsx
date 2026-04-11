@@ -81,7 +81,7 @@ export default function BackgroundRemoverPage() {
                 title={t.home.tools["background-remover"].title}
                 backLabel={t.common.back}
             />
-            <main className="max-w-5xl mx-auto px-4 py-6 md:px-6 md:py-10">
+            <main className="max-w-4xl mx-auto px-4 md:px-5 py-6 md:py-8">
                 {/* hidden input always mounted so the ref is always valid */}
                 <input
                     ref={fileInputRef}
@@ -92,7 +92,7 @@ export default function BackgroundRemoverPage() {
                     id="file-upload"
                 />
                 <div
-                    className={`space-y-4 rounded-lg ${isDragging ? 'bg-blue-50 dark:bg-blue-900' : ''}`}
+                    className={`space-y-3 rounded-lg ${isDragging ? 'bg-blue-50 dark:bg-blue-900' : ''}`}
                     onDrop={handleDrop}
                     onDragOver={(e) => {
                         e.preventDefault();
@@ -101,35 +101,35 @@ export default function BackgroundRemoverPage() {
                     onDragLeave={() => setIsDragging(false)}
                 >
                     {!image && (
-                        <div className="w-full p-8 md:p-12 border-2 border-dashed border-zinc-300 dark:border-zinc-700 rounded-lg text-center cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                        <div className="w-full p-6 md:p-8 border-2 border-dashed border-zinc-300 dark:border-zinc-700 rounded-lg text-center cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
                             <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M16 10l-4-4m0 0L8 10m4-4v12" />
                                 </svg>
-                                <p className="text-zinc-500 text-base md:text-lg">{t.backgroundRemover.upload}</p>
+                                <p className="text-zinc-500 text-xs md:text-sm">{t.backgroundRemover.upload}</p>
                             </label>
                         </div>
                     )}
 
                     {image && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div>
-                                <h3 className="text-base md:text-lg font-semibold mb-2">{t.backgroundRemover.original}</h3>
-                                <img src={image} alt="Original" className="rounded-lg shadow-md w-full object-contain max-h-72 md:max-h-none" />
+                                <h3 className="text-xs md:text-sm font-semibold mb-1.5">{t.backgroundRemover.original}</h3>
+                                <img src={image} alt="Original" className="rounded-lg shadow-md w-full object-contain max-h-64 md:max-h-none" />
                             </div>
                             {(isLoading || result || error) && (
                                 <div className="flex flex-col">
-                                    <h3 className="text-base md:text-lg font-semibold mb-2">{t.backgroundRemover.result}</h3>
+                                    <h3 className="text-xs md:text-sm font-semibold mb-1.5">{t.backgroundRemover.result}</h3>
                                     {isLoading ? (
-                                        <div className="flex flex-1 min-h-32 items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-lg">
-                                            <p className="text-zinc-500 text-sm md:text-base">{t.backgroundRemover.loading}</p>
+                                        <div className="flex flex-1 min-h-24 items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-lg">
+                                            <p className="text-zinc-500 text-xs md:text-sm">{t.backgroundRemover.loading}</p>
                                         </div>
                                     ) : error ? (
-                                        <div className="flex flex-1 min-h-32 items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-lg">
-                                            <p className="text-red-500 text-sm md:text-base">{t.backgroundRemover.error}</p>
+                                        <div className="flex flex-1 min-h-24 items-center justify-center bg-zinc-100 dark:bg-zinc-800 rounded-lg">
+                                            <p className="text-red-500 text-xs md:text-sm">{t.backgroundRemover.error}</p>
                                         </div>
                                     ) : (
-                                        <img src={result!} alt="Result" className="rounded-lg shadow-md w-full object-contain max-h-72 md:max-h-none" />
+                                        <img src={result!} alt="Result" className="rounded-lg shadow-md w-full object-contain max-h-64 md:max-h-none" />
                                     )}
                                 </div>
                             )}
@@ -137,13 +137,13 @@ export default function BackgroundRemoverPage() {
                     )}
 
                     {image && (
-                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <div className="flex flex-col sm:flex-row gap-2.5 justify-center">
                             
                             {!result && !isLoading && (
                                 <button
                                     type="button"
                                     onClick={handleRemove}
-                                    className="cursor-pointer px-4 py-2.5 bg-blue-600 dark:bg-zinc-200 text-white dark:text-zinc-900 rounded-lg text-sm md:text-base w-full sm:w-auto text-center"
+                                    className="cursor-pointer px-3.5 py-2 bg-blue-600 dark:bg-zinc-200 text-white dark:text-zinc-900 rounded-lg text-xs md:text-sm w-full sm:w-auto text-center"
                                 >
                                     {t.backgroundRemover.remove}
                                 </button>
@@ -152,7 +152,7 @@ export default function BackgroundRemoverPage() {
                                 <a
                                     href={result}
                                     download="background-removed.png"
-                                    className="px-4 py-2.5 bg-green-600 text-white rounded-lg text-sm md:text-base w-full sm:w-auto text-center"
+                                    className="px-3.5 py-2 bg-green-600 text-white rounded-lg text-xs md:text-sm w-full sm:w-auto text-center"
                                 >
                                     {t.backgroundRemover.download}
                                 </a>
@@ -161,7 +161,7 @@ export default function BackgroundRemoverPage() {
                                 <button
                                     type="button"
                                     onClick={handleNewUploadClick}
-                                    className="cursor-pointer px-4 py-2.5 bg-zinc-800 text-white rounded-lg text-sm md:text-base w-full sm:w-auto text-center"
+                                    className="cursor-pointer px-3.5 py-2 bg-zinc-800 text-white rounded-lg text-xs md:text-sm w-full sm:w-auto text-center"
                                 >
                                     {t.backgroundRemover.uploadNew}
                                 </button>

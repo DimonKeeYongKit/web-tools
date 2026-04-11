@@ -28,30 +28,30 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       <NavBar variant="home" title="Web Tools" subtitle={t.home.subtitle} />
-      <main className="max-w-5xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <main className="max-w-4xl mx-auto px-4 md:px-5 py-6 md:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {toolsMeta.map((meta) => {
             const info = t.home.tools[meta.id as keyof typeof t.home.tools];
             const linkContent = (
               <>
-                <div className="text-3xl mb-3">
+                <div className="text-2xl mb-2.5">
                   {meta.icon.startsWith("http") ? (
                     <Image
                       src={meta.icon}
                       alt={`${meta.id} logo`}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7"
                       unoptimized
                     />
                   ) : (
                     meta.icon
                   )}
                 </div>
-                <h2 className="font-semibold text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h2 className="font-semibold text-sm md:text-base text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {info.title}
                 </h2>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">
+                <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-400 mt-0.5 leading-relaxed">
                   {info.description}
                 </p>
               </>
@@ -64,7 +64,7 @@ export default function Home() {
                   href={meta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group block rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 hover:shadow-lg transition-all duration-150 ${meta.color}`}
+                  className={`group block rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 md:p-5 hover:shadow-lg transition-all duration-150 ${meta.color}`}
                 >
                   {linkContent}
                 </a>
@@ -75,7 +75,7 @@ export default function Home() {
               <Link
                 key={meta.id}
                 href={meta.href}
-                className={`group block rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 hover:shadow-lg transition-all duration-150 ${meta.color}`}
+                className={`group block rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 md:p-5 hover:shadow-lg transition-all duration-150 ${meta.color}`}
               >
                 {linkContent}
               </Link>
