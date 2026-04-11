@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { NavBar } from "../components/navbar";
 import { useLang } from "../components/lang-context";
 import { translations } from "../i18n/translations";

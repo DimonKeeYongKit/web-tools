@@ -41,6 +41,18 @@ const zh = {
         title: "VirusTotal",
         description: "分析可疑文件和URL以检测恶意软件类型",
       },
+      "background-remover": {
+        title: "背景去除",
+        description: "上传图片并去除背景",
+        upload: "点击或拖拽上传图片",
+        original: "原图",
+        result: "结果",
+        placeholder: "处理结果将显示在这里...",
+        loading: "正在处理...",
+        remove: "去除背景",
+        download: "下载图片",
+        uploadNew: "上传新图片",
+      },
     },
   },
   qrCode: {
@@ -117,6 +129,17 @@ const zh = {
     interestEarned: "当年利息",
     total: "总金额",
   },
+  backgroundRemover: {
+    upload: "点击或拖拽上传图片",
+    original: "原图",
+    result: "结果",
+    placeholder: "处理结果将显示在这里...",
+    loading: "正在处理...",
+    error: "处理失败，请重试",
+    remove: "去除背景",
+    download: "下载图片",
+    uploadNew: "上传新图片",
+  },
 };
 
 type Translations = typeof zh;
@@ -163,6 +186,18 @@ const en: Translations = {
       virustotal: {
         title: "VirusTotal",
         description: "Analyze suspicious files and URLs to detect types of malware",
+      },
+      "background-remover": {
+        title: "Background Remover",
+        description: "Upload an image and remove the background",
+        upload: "Click or drag to upload an image",
+        original: "Original",
+        result: "Result",
+        placeholder: "The result will be displayed here",
+        loading: "Processing...",
+        remove: "Remove Background",
+        download: "Download Image",
+        uploadNew: "Upload New Image",
       },
     },
   },
@@ -239,6 +274,17 @@ const en: Translations = {
     invested: "Total Invested",
     interestEarned: "Interest Earned (Year)",
     total: "Total Amount",
+  },
+  backgroundRemover: {
+    upload: "Click or drag to upload an image",
+    original: "Original",
+    result: "Result",
+    loading: "Processing...",
+    error: "Processing failed, please try again",
+    remove: "Remove Background",
+    download: "Download",
+    placeholder: "The result will be displayed here",
+    uploadNew: "Upload New Image",
   },
 };
 
