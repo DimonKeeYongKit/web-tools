@@ -19,6 +19,7 @@ const toolsMeta: { id: ToolId; icon: string; href: string; color: string; isExte
   { id: "ifixit", icon: "https://www.google.com/s2/favicons?domain=www.ifixit.com", href: "https://www.ifixit.com/", color: "hover:border-gray-400 dark:hover:border-gray-500", isExternal: true },
   { id: "virustotal", icon: "https://www.google.com/s2/favicons?domain=www.virustotal.com", href: "https://www.virustotal.com/", color: "hover:border-teal-400 dark:hover:border-teal-500", isExternal: true },
   { id: "background-remover", icon: "🖼️", href: "/background-remover", color: "hover:border-cyan-400 dark:hover:border-cyan-500" },
+  { id: "device-info", icon: "📱", href: "/device-info", color: "hover:border-indigo-400 dark:hover:border-indigo-500" },
 ];
 
 export default function Home() {
