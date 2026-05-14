@@ -11,13 +11,10 @@ type ToolId = keyof typeof translations.zh.home.tools;
 const toolsMeta: { id: ToolId; icon: string; href: string; color: string; isExternal?: boolean }[] = [
   { id: "qr-code", icon: "⬛", href: "/qr-code", color: "hover:border-purple-400 dark:hover:border-purple-500" },
   { id: "json-formatter", icon: "📋", href: "/json-formatter", color: "hover:border-yellow-400 dark:hover:border-yellow-500" },
-  { id: "cyberchef", icon: "https://www.google.com/s2/favicons?domain=gchq.github.io/CyberChef", href: "https://gchq.github.io/CyberChef", color: "hover:border-blue-400 dark:hover:border-blue-500", isExternal: true },
   { id: "password-generator", icon: "🔐", href: "/password-generator", color: "hover:border-green-400 dark:hover:border-green-500" },
   { id: "word-counter", icon: "📝", href: "/word-counter", color: "hover:border-orange-400 dark:hover:border-orange-500" },
   { id: "uuid-generator", icon: "🔑", href: "/uuid-generator", color: "hover:border-pink-400 dark:hover:border-pink-500" },
   { id: "compound-interest-calculator", icon: "📈", href: "/compound-interest-calculator", color: "hover:border-red-400 dark:hover:border-red-500" },
-  { id: "ifixit", icon: "https://www.google.com/s2/favicons?domain=www.ifixit.com", href: "https://www.ifixit.com/", color: "hover:border-gray-400 dark:hover:border-gray-500", isExternal: true },
-  { id: "virustotal", icon: "https://www.google.com/s2/favicons?domain=www.virustotal.com", href: "https://www.virustotal.com/", color: "hover:border-teal-400 dark:hover:border-teal-500", isExternal: true },
   { id: "background-remover", icon: "🖼️", href: "/background-remover", color: "hover:border-cyan-400 dark:hover:border-cyan-500" },
   { id: "device-info", icon: "📱", href: "/device-info", color: "hover:border-indigo-400 dark:hover:border-indigo-500" },
 ];

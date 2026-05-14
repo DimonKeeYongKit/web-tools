@@ -13,10 +13,6 @@ const zh = {
         title: "JSON 格式化",
         description: "美化或压缩 JSON，高亮错误提示",
       },
-      cyberchef: {
-        title: "CyberChef",
-        description: "加密、编码、压缩和数据分析的网络瑞士军刀",
-      },
       "password-generator": {
         title: "密码生成器",
         description: "生成自定义长度和规则的安全随机密码",
@@ -32,14 +28,6 @@ const zh = {
       "compound-interest-calculator": {
         title: "复利计算器",
         description: "计算定期投资的复利",
-      },
-      ifixit: {
-        title: "iFixit",
-        description: "免费的维修手册，适用于任何物品",
-      },
-      virustotal: {
-        title: "VirusTotal",
-        description: "分析可疑文件和URL以检测恶意软件类型",
       },
       "background-remover": {
         title: "背景去除",
@@ -239,10 +227,6 @@ const en: Translations = {
         title: "JSON Formatter",
         description: "Prettify or minify JSON with error highlighting",
       },
-      cyberchef: {
-        title: "CyberChef",
-        description: "The Cyber Swiss Army Knife for encryption, encoding, compression and data analysis",
-      },
       "password-generator": {
         title: "Password Generator",
         description: "Generate secure random passwords with custom rules",
@@ -258,14 +242,6 @@ const en: Translations = {
       "compound-interest-calculator": {
         title: "Compound Interest Calculator",
         description: "Calculate compound interest for periodic investments",
-      },
-      ifixit: {
-        title: "iFixit",
-        description: "The free repair manual for everything",
-      },
-      virustotal: {
-        title: "VirusTotal",
-        description: "Analyze suspicious files and URLs to detect types of malware",
       },
       "background-remover": {
         title: "Background Remover",
